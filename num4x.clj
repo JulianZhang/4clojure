@@ -16,3 +16,6 @@
             (drop y (take z (cycle b)))
             ) )
 
+;;#46
+#(fn [a b] (% b a))
+
