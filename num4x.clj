@@ -19,3 +19,16 @@
 ;;#46
 #(fn [a b] (% b a))
 
+;;#53
+
+(fn f [a] (concat (last (sort-by #(count %)
+	(reverse (filter #(> (count %) 1) 
+	(reduce #(if (< (last (last %1)) %2)
+	      (concat (butlast %1) [(concat (last %1) [%2])])
+	      (concat %1 [[%2]])
+	      )  [[99]] a
+	)))
+ )
+) []))
+
+
